@@ -1,29 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace Shortcutter
 {
     public partial class MainForm : Form
     {
-        bool isMouseDown = false;
-        Point mouseOffset;
+        private bool isMouseDown = false;
+        private Point mouseOffset;
+
         public MainForm()
         {
             InitializeComponent();
         }
-
+        #region "Events"
         private void MainForm_Load(object sender, EventArgs e)
         {
             ChkOnTop.Checked = Properties.Settings.Default.FloatOnTop;
             this.TopMost = ChkOnTop.Checked;
+
             this.Location = new Point(Properties.Settings.Default.LocationX, Properties.Settings.Default.LocationY);
 
             this.Opacity = Properties.Settings.Default.OpacityPercent;
@@ -34,10 +32,54 @@ namespace Shortcutter
             }
 
             GetFiles();
-
         }
-
-
+        private void MainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                // Get the new position
+                mouseOffset = new Point(e.X, -e.Y);
+                // Set that left button is pressed
+                isMouseDown = true;
+            }
+        }
+        private void MainForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (isMouseDown)
+            {
+                Point mousePos = Control.MousePosition;
+                // Get the new form position
+                mousePos.Offset(mouseOffset.X, mouseOffset.Y);
+                this.Location = mousePos;
+            }
+        }
+        private void MainForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                isMouseDown = false;
+            }
+        }
+        private void LstFiles_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                RunItem(LstFiles);
+            }
+        }
+        private void LstFiles_Click(object sender, EventArgs e)
+        {
+            RunItem(LstFiles);
+        }
+        private void BtnRefresh_Click(object sender, EventArgs e)
+        {
+            GetFiles();
+        }
+        private void ChkOnTop_CheckedChanged(object sender, EventArgs e)
+        {
+            this.TopMost = ChkOnTop.Checked;
+        }
+        #endregion
         private void GetFiles()
         {
             if (!Directory.Exists(Properties.Settings.Default.ShortcutFolder))
@@ -68,11 +110,19 @@ namespace Shortcutter
 
             this.Size = this.PreferredSize;
 
-
-
         }
-        private void MainForm_MouseDown(object sender, MouseEventArgs e)
+        private void RunItem(ListBox lst)
         {
+
+            try
+            {
+                Process.Start(Properties.Settings.Default.ShortcutFolder + Path.DirectorySeparatorChar + lst.SelectedItem);
+            }
+            catch (Win32Exception e)
+            {
+                string msg = e.Message + Environment.NewLine + Environment.NewLine + Properties.Settings.Default.ShortcutFolder + Path.DirectorySeparatorChar + LstFiles.SelectedItem + Environment.NewLine + Environment.NewLine + "Is there a period in the shortcut's name?";
+                MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
     }

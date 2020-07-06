@@ -43,6 +43,8 @@
             this.LstFiles.Name = "LstFiles";
             this.LstFiles.Size = new System.Drawing.Size(176, 186);
             this.LstFiles.TabIndex = 0;
+            this.LstFiles.Click += new System.EventHandler(this.LstFiles_Click);
+            this.LstFiles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LstFiles_KeyPress);
             // 
             // ChkOnTop
             // 
@@ -53,6 +55,7 @@
             this.ChkOnTop.TabIndex = 1;
             this.ChkOnTop.Text = "&Float";
             this.ChkOnTop.UseVisualStyleBackColor = true;
+            this.ChkOnTop.CheckedChanged += new System.EventHandler(this.ChkOnTop_CheckedChanged);
             // 
             // BtnRefresh
             // 
@@ -62,6 +65,7 @@
             this.BtnRefresh.TabIndex = 2;
             this.BtnRefresh.Text = "&Refresh";
             this.BtnRefresh.UseVisualStyleBackColor = true;
+            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // MainForm
             // 
@@ -76,6 +80,8 @@
             this.Text = "Shortcutter";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 
