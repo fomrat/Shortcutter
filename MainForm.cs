@@ -93,9 +93,11 @@ namespace Shortcutter
 
         private void GetFiles()
         {
-            if (!Directory.Exists(Properties.Settings.Default.ShortcutFolder))
+            string folder = Properties.Settings.Default.ShortcutFolder;
+            if (!Directory.Exists(folder))
             {
-                MessageBox.Show("Set a folder And extension in the config file.", "Settings must make sense...", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"ShortcutFolder set to { (object)folder} .Set a folder and extension to display in the config file.","Settings must make sense...",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             string[] files = Directory.GetFiles(Properties.Settings.Default.ShortcutFolder, "*." + Properties.Settings.Default.FileExt);
