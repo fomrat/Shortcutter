@@ -16,7 +16,9 @@ namespace Shortcutter
         {
             InitializeComponent();
         }
+
         #region "Events"
+
         private void MainForm_Load(object sender, EventArgs e)
         {
             ChkOnTop.Checked = Properties.Settings.Default.FloatOnTop;
@@ -33,6 +35,7 @@ namespace Shortcutter
 
             GetFiles();
         }
+
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -43,6 +46,7 @@ namespace Shortcutter
                 isMouseDown = true;
             }
         }
+
         private void MainForm_MouseMove(object sender, MouseEventArgs e)
         {
             if (isMouseDown)
@@ -53,6 +57,7 @@ namespace Shortcutter
                 this.Location = mousePos;
             }
         }
+
         private void MainForm_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -60,6 +65,7 @@ namespace Shortcutter
                 isMouseDown = false;
             }
         }
+
         private void LstFiles_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
@@ -67,19 +73,24 @@ namespace Shortcutter
                 RunItem(LstFiles);
             }
         }
+
         private void LstFiles_Click(object sender, EventArgs e)
         {
             RunItem(LstFiles);
         }
+
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
             GetFiles();
         }
+
         private void ChkOnTop_CheckedChanged(object sender, EventArgs e)
         {
             this.TopMost = ChkOnTop.Checked;
         }
-        #endregion
+
+        #endregion "Events"
+
         private void GetFiles()
         {
             if (!Directory.Exists(Properties.Settings.Default.ShortcutFolder))
@@ -109,11 +120,10 @@ namespace Shortcutter
             BtnRefresh.Top = LstFiles.Height + 1;
 
             this.Size = this.PreferredSize;
-
         }
+
         private void RunItem(ListBox lst)
         {
-
             try
             {
                 Process.Start(Properties.Settings.Default.ShortcutFolder + Path.DirectorySeparatorChar + lst.SelectedItem);
@@ -123,7 +133,6 @@ namespace Shortcutter
                 string msg = e.Message + Environment.NewLine + Environment.NewLine + Properties.Settings.Default.ShortcutFolder + Path.DirectorySeparatorChar + LstFiles.SelectedItem + Environment.NewLine + Environment.NewLine + "Is there a period in the shortcut's name?";
                 MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
     }
 }
