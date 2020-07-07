@@ -41,7 +41,7 @@ namespace Shortcutter
             if (e.Button == MouseButtons.Left)
             {
                 // Get the new position
-                mouseOffset = new Point(e.X, -e.Y);
+                mouseOffset = new Point(-e.X, -e.Y);
                 // Set that left button is pressed
                 isMouseDown = true;
             }
@@ -135,6 +135,13 @@ namespace Shortcutter
                 string msg = e.Message + Environment.NewLine + Environment.NewLine + Properties.Settings.Default.ShortcutFolder + Path.DirectorySeparatorChar + LstFiles.SelectedItem + Environment.NewLine + Environment.NewLine + "Is there a period in the shortcut's name?";
                 MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Properties.Settings.Default.LocationX = this.Location.X;
+            Properties.Settings.Default.LocationY = this.Location.Y;
+            Properties.Settings.Default.Save();
         }
     }
 }
