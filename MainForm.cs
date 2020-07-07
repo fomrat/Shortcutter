@@ -21,6 +21,7 @@ namespace Shortcutter
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            this.FormBorderStyle = FormBorderStyle.FixedSingle;
             ChkOnTop.Checked = Properties.Settings.Default.FloatOnTop;
             this.TopMost = ChkOnTop.Checked;
 
@@ -121,7 +122,7 @@ namespace Shortcutter
             ChkOnTop.Top = LstFiles.Height + 5;
             BtnRefresh.Top = LstFiles.Height + 1;
 
-            this.Size = this.PreferredSize;
+            this.Size = new Size(this.PreferredSize.Width - 3, this.PreferredSize.Height);
         }
 
         private void RunItem(ListBox lst)

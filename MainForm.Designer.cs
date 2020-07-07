@@ -76,6 +76,7 @@
             this.Controls.Add(this.ChkOnTop);
             this.Controls.Add(this.LstFiles);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Shortcutter";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
