@@ -2,9 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Shortcutter.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="OpacityPercent" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">80</Value>
-    </Setting>
     <Setting Name="FloatOnTop" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
@@ -15,10 +12,13 @@
       <Value Profile="(Default)">100</Value>
     </Setting>
     <Setting Name="LocationY" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">100</Value>
+      <Value Profile="(Default)">250</Value>
+    </Setting>
+    <Setting Name="OpacityPercent" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">60</Value>
     </Setting>
     <Setting Name="ShortcutFolder" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\macth\Desktop\Shortcuts</Value>
+      <Value Profile="(Default)">C:\Users\ll56150\Desktop\Shortcuts</Value>
     </Setting>
   </Settings>
 </SettingsFile>

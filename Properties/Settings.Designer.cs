@@ -25,18 +25,6 @@ namespace Shortcutter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("80")]
-        public int OpacityPercent {
-            get {
-                return ((int)(this["OpacityPercent"]));
-            }
-            set {
-                this["OpacityPercent"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool FloatOnTop {
             get {
@@ -73,7 +61,7 @@ namespace Shortcutter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        [global::System.Configuration.DefaultSettingValueAttribute("250")]
         public int LocationY {
             get {
                 return ((int)(this["LocationY"]));
@@ -85,7 +73,19 @@ namespace Shortcutter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\macth\\Desktop\\Shortcuts")]
+        [global::System.Configuration.DefaultSettingValueAttribute("60")]
+        public int OpacityPercent {
+            get {
+                return ((int)(this["OpacityPercent"]));
+            }
+            set {
+                this["OpacityPercent"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\ll56150\\Desktop\\Shortcuts")]
         public string ShortcutFolder {
             get {
                 return ((string)(this["ShortcutFolder"]));

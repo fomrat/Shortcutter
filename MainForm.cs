@@ -5,6 +5,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
+
 namespace Shortcutter
 {
     public partial class MainForm : Form
@@ -21,11 +22,11 @@ namespace Shortcutter
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            
+            this.Location = new Point(Properties.Settings.Default.LocationX, Properties.Settings.Default.LocationY);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             ChkOnTop.Checked = Properties.Settings.Default.FloatOnTop;
             this.TopMost = ChkOnTop.Checked;
-
-            this.Location = new Point(Properties.Settings.Default.LocationX, Properties.Settings.Default.LocationY);
 
             this.Opacity = Properties.Settings.Default.OpacityPercent;
 
@@ -35,6 +36,10 @@ namespace Shortcutter
             }
 
             GetFiles();
+
+            Screen[] screens = Screen.AllScreens;
+            Screen screen = Screen.FromControl(this); //this is the Form class
+
         }
 
         private void MainForm_MouseDown(object sender, MouseEventArgs e)
@@ -140,9 +145,15 @@ namespace Shortcutter
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Properties.Settings.Default.LocationX = this.Location.X;
-            Properties.Settings.Default.LocationY = this.Location.Y;
             Properties.Settings.Default.Save();
+        }
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            Screen screen = Screen.FromControl(this); //this is the Form class
+            Console.WriteLine(screen.DeviceName);
+            Console.WriteLine(this.Location.X.ToString() + "," + this.Location.Y.ToString());
+            Console.WriteLine(Properties.Settings.Default.LocationX.ToString() + "," + Properties.Settings.Default.LocationY.ToString());
         }
     }
 }
