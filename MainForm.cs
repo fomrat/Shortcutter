@@ -22,17 +22,17 @@ namespace Shortcutter
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
-            this.Location = new Point(Properties.Settings.Default.LocationX, Properties.Settings.Default.LocationY);
+            // have to prefix Properties with the Namepace if we want to examine it at design-time (!?)
+            this.Location = new Point(Shortcutter.Properties.Settings.Default.LocationX, Shortcutter.Properties.Settings.Default.LocationY);
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            ChkOnTop.Checked = Properties.Settings.Default.FloatOnTop;
+            ChkOnTop.Checked = Shortcutter.Properties.Settings.Default.FloatOnTop;
             this.TopMost = ChkOnTop.Checked;
+            Debug.WriteLine(this.Opacity.ToString());
+            this.Opacity = Shortcutter.Properties.Settings.Default.OpacityPercent;
 
-            this.Opacity = Properties.Settings.Default.OpacityPercent;
-
-            if (this.Opacity < 10)
+            if (this.Opacity < 0.10)
             {
-                this.Opacity = 10;
+                this.Opacity = 0.10;
             }
 
             GetFiles();
@@ -151,9 +151,9 @@ namespace Shortcutter
         private void MainForm_Activated(object sender, EventArgs e)
         {
             Screen screen = Screen.FromControl(this); //this is the Form class
-            Console.WriteLine(screen.DeviceName);
-            Console.WriteLine(this.Location.X.ToString() + "," + this.Location.Y.ToString());
-            Console.WriteLine(Properties.Settings.Default.LocationX.ToString() + "," + Properties.Settings.Default.LocationY.ToString());
+            Debug.WriteLine(screen.DeviceName);
+            Debug.WriteLine(this.Location.X.ToString() + "," + this.Location.Y.ToString());
+            Debug.WriteLine(Properties.Settings.Default.LocationX.ToString() + "," + Properties.Settings.Default.LocationY.ToString());
         }
     }
 }

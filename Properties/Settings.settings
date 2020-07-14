@@ -14,8 +14,8 @@
     <Setting Name="LocationY" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">250</Value>
     </Setting>
-    <Setting Name="OpacityPercent" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">60</Value>
+    <Setting Name="OpacityPercent" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">0.75</Value>
     </Setting>
     <Setting Name="ShortcutFolder" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Users\ll56150\Desktop\Shortcuts</Value>

@@ -73,10 +73,10 @@ namespace Shortcutter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("60")]
-        public int OpacityPercent {
+        [global::System.Configuration.DefaultSettingValueAttribute("0.75")]
+        public double OpacityPercent {
             get {
-                return ((int)(this["OpacityPercent"]));
+                return ((double)(this["OpacityPercent"]));
             }
             set {
                 this["OpacityPercent"] = value;
