@@ -49,7 +49,7 @@ namespace Shortcutter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
         public int LocationX {
             get {
                 return ((int)(this["LocationX"]));
@@ -61,7 +61,7 @@ namespace Shortcutter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
         public int LocationY {
             get {
                 return ((int)(this["LocationY"]));
@@ -85,7 +85,7 @@ namespace Shortcutter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.8")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public double OpacityPercent {
             get {
                 return ((double)(this["OpacityPercent"]));
