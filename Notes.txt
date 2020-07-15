@@ -1,0 +1,55 @@
+﻿
+            // was attempting to determine which screen the form was on...
+            //Screen[] screens = Screen.AllScreens;
+            //Screen screen = Screen.FromControl(this); //this is the Form class
+
+
+        // moving form with a mouse down is still a little funky...
+                this.DoubleClick += new System.EventHandler(this.MainForm_DoubleClick);
+            this.Activated += new System.EventHandler(this.MainForm_Activated);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
+    
+        //private bool isMouseDown = false;
+        //private Point mouseOffset;
+
+        private void MainForm_MouseDown(object sender, MouseEventArgs e)
+        {
+            //if (e.Button == MouseButtons.Left)
+            //{
+            //    // Get the new position
+            //    mouseOffset = new Point(-e.X, -e.Y);
+            //    // Set that left button is pressed
+            //    isMouseDown = true;
+            //}
+        }
+
+        private void MainForm_MouseMove(object sender, MouseEventArgs e)
+        {
+            //if (isMouseDown)
+            //{
+            //    Point mousePos = Control.MousePosition;
+            //    // Get the new form position
+            //    mousePos.Offset(mouseOffset.X, mouseOffset.Y);
+            //    this.Location = mousePos;
+            //}
+        }
+
+        private void MainForm_MouseUp(object sender, MouseEventArgs e)
+        {
+            //if (e.Button == MouseButtons.Left)
+            //{
+            //    isMouseDown = false;
+            //}
+        }
+
+// MessageBox.Show(System.Configuration.ConfigurationManager.OpenExeConfiguration(System.Configuration.ConfigurationUserLevel.PerUserRoamingAndLocal).FilePath);
+
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            Screen screen = Screen.FromControl(this); //this is the Form class
+            Debug.WriteLine(screen.DeviceName);
+            Debug.WriteLine(this.Location.X.ToString() + "," + this.Location.Y.ToString());
+            Debug.WriteLine(Shortcutter.Properties.Settings.Default.LocationX.ToString() + "," + Shortcutter.Properties.Settings.Default.LocationY.ToString());
+        }

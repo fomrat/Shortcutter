@@ -49,7 +49,7 @@ namespace Shortcutter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int LocationX {
             get {
                 return ((int)(this["LocationX"]));
@@ -61,7 +61,7 @@ namespace Shortcutter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("250")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public int LocationY {
             get {
                 return ((int)(this["LocationY"]));
@@ -73,25 +73,25 @@ namespace Shortcutter.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.75")]
-        public double OpacityPercent {
-            get {
-                return ((double)(this["OpacityPercent"]));
-            }
-            set {
-                this["OpacityPercent"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\ll56150\\Desktop\\Shortcuts")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string ShortcutFolder {
             get {
                 return ((string)(this["ShortcutFolder"]));
             }
             set {
                 this["ShortcutFolder"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.8")]
+        public double OpacityPercent {
+            get {
+                return ((double)(this["OpacityPercent"]));
+            }
+            set {
+                this["OpacityPercent"] = value;
             }
         }
     }

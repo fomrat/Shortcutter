@@ -29,62 +29,70 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.LstFiles = new System.Windows.Forms.ListBox();
-            this.ChkOnTop = new System.Windows.Forms.CheckBox();
-            this.BtnRefresh = new System.Windows.Forms.Button();
+            this.lstFiles = new System.Windows.Forms.ListBox();
+            this.chkOnTop = new System.Windows.Forms.CheckBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnChangeFolder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // LstFiles
             // 
-            this.LstFiles.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LstFiles.FormattingEnabled = true;
-            this.LstFiles.ItemHeight = 14;
-            this.LstFiles.Location = new System.Drawing.Point(0, 0);
-            this.LstFiles.Name = "LstFiles";
-            this.LstFiles.Size = new System.Drawing.Size(176, 186);
-            this.LstFiles.TabIndex = 0;
-            this.LstFiles.Click += new System.EventHandler(this.LstFiles_Click);
-            this.LstFiles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LstFiles_KeyPress);
+            this.lstFiles.Font = new System.Drawing.Font("Courier New", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstFiles.FormattingEnabled = true;
+            this.lstFiles.ItemHeight = 14;
+            this.lstFiles.Location = new System.Drawing.Point(0, 0);
+            this.lstFiles.Name = "LstFiles";
+            this.lstFiles.Size = new System.Drawing.Size(176, 186);
+            this.lstFiles.TabIndex = 0;
+            this.lstFiles.Click += new System.EventHandler(this.lstFiles_Click);
+            this.lstFiles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lstFiles_KeyPress);
             // 
             // ChkOnTop
             // 
-            this.ChkOnTop.AutoSize = true;
-            this.ChkOnTop.Location = new System.Drawing.Point(2, 196);
-            this.ChkOnTop.Name = "ChkOnTop";
-            this.ChkOnTop.Size = new System.Drawing.Size(49, 17);
-            this.ChkOnTop.TabIndex = 1;
-            this.ChkOnTop.Text = "&Float";
-            this.ChkOnTop.UseVisualStyleBackColor = true;
-            this.ChkOnTop.CheckedChanged += new System.EventHandler(this.ChkOnTop_CheckedChanged);
+            this.chkOnTop.AutoSize = true;
+            this.chkOnTop.Location = new System.Drawing.Point(2, 196);
+            this.chkOnTop.Name = "ChkOnTop";
+            this.chkOnTop.Size = new System.Drawing.Size(49, 17);
+            this.chkOnTop.TabIndex = 1;
+            this.chkOnTop.Text = "&Float";
+            this.chkOnTop.UseVisualStyleBackColor = true;
+            this.chkOnTop.CheckedChanged += new System.EventHandler(this.ChkOnTop_CheckedChanged);
             // 
             // BtnRefresh
             // 
-            this.BtnRefresh.Location = new System.Drawing.Point(68, 192);
-            this.BtnRefresh.Name = "BtnRefresh";
-            this.BtnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.BtnRefresh.TabIndex = 2;
-            this.BtnRefresh.Text = "&Refresh";
-            this.BtnRefresh.UseVisualStyleBackColor = true;
-            this.BtnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
+            this.btnRefresh.Location = new System.Drawing.Point(48, 192);
+            this.btnRefresh.Name = "BtnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.TabIndex = 2;
+            this.btnRefresh.Text = "&Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
+            // 
+            // btnChangeFolder
+            // 
+            this.btnChangeFolder.Location = new System.Drawing.Point(129, 192);
+            this.btnChangeFolder.Name = "btnChangeFolder";
+            this.btnChangeFolder.Size = new System.Drawing.Size(75, 23);
+            this.btnChangeFolder.TabIndex = 3;
+            this.btnChangeFolder.Text = "&Change";
+            this.btnChangeFolder.UseVisualStyleBackColor = true;
+            this.btnChangeFolder.Click += new System.EventHandler(this.btnChangeFolder_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(325, 450);
-            this.Controls.Add(this.BtnRefresh);
-            this.Controls.Add(this.ChkOnTop);
-            this.Controls.Add(this.LstFiles);
+            this.Controls.Add(this.btnChangeFolder);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.chkOnTop);
+            this.Controls.Add(this.lstFiles);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Shortcutter";
-            this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainForm_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -92,9 +100,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox LstFiles;
-        private System.Windows.Forms.CheckBox ChkOnTop;
-        private System.Windows.Forms.Button BtnRefresh;
+        private System.Windows.Forms.ListBox lstFiles;
+        private System.Windows.Forms.CheckBox chkOnTop;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnChangeFolder;
     }
 }
 
