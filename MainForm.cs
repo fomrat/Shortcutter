@@ -23,7 +23,7 @@ namespace Shortcutter
             Debug.WriteLine(this.Opacity.ToString());
             this.Opacity = Shortcutter.Properties.Settings.Default.OpacityPercent;
 
-            if (this.Opacity < 0.10) {this.Opacity = 0.10;}
+            if (this.Opacity < 0.10) { this.Opacity = 0.10; }
 
             GetFiles();
             this.Visible = true;
@@ -58,8 +58,8 @@ namespace Shortcutter
             }
             int maxHeight = Screen.FromControl(this).WorkingArea.Height - 100;
             lstFiles.Size = lstFiles.PreferredSize;
-            if (lstFiles.PreferredSize.Width < 200) {lstFiles.Width = 200;}
-            if (lstFiles.PreferredHeight > maxHeight) {lstFiles.Height = maxHeight;}
+            if (lstFiles.PreferredSize.Width < 200) { lstFiles.Width = 200; }
+            if (lstFiles.PreferredHeight > maxHeight) { lstFiles.Height = maxHeight; }
 
             chkOnTop.Top = lstFiles.Height + 5;
             btnChangeFolder.Top = lstFiles.Height + 1;
@@ -79,8 +79,8 @@ namespace Shortcutter
         }
         private void RunItem(ListBox lst)
         {
-            try {Process.Start(Shortcutter.Properties.Settings.Default.ShortcutFolder + Path.DirectorySeparatorChar + lst.SelectedItem);}
-            catch (Win32Exception e) 
+            try { Process.Start(Shortcutter.Properties.Settings.Default.ShortcutFolder + Path.DirectorySeparatorChar + lst.SelectedItem); }
+            catch (Win32Exception e)
             {
                 string msg = e.Message + Environment.NewLine + Environment.NewLine + Shortcutter.Properties.Settings.Default.ShortcutFolder + Path.DirectorySeparatorChar + lstFiles.SelectedItem + Environment.NewLine + Environment.NewLine + "Is there a period in the shortcut's name?";
                 MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
