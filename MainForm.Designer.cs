@@ -32,6 +32,7 @@
             this.lstFiles = new System.Windows.Forms.ListBox();
             this.chkOnTop = new System.Windows.Forms.CheckBox();
             this.btnChangeFolder = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lstFiles
@@ -59,23 +60,36 @@
             // 
             // btnChangeFolder
             // 
-            this.btnChangeFolder.AutoSize = true;
             this.btnChangeFolder.BackColor = System.Drawing.SystemColors.Control;
             this.btnChangeFolder.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnChangeFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeFolder.Location = new System.Drawing.Point(112, 192);
+            this.btnChangeFolder.Location = new System.Drawing.Point(75, 192);
             this.btnChangeFolder.Name = "btnChangeFolder";
-            this.btnChangeFolder.Size = new System.Drawing.Size(88, 25);
-            this.btnChangeFolder.TabIndex = 3;
+            this.btnChangeFolder.Size = new System.Drawing.Size(60, 25);
+            this.btnChangeFolder.TabIndex = 2;
             this.btnChangeFolder.Text = "&Change Folder";
             this.btnChangeFolder.UseVisualStyleBackColor = false;
             this.btnChangeFolder.Click += new System.EventHandler(this.btnChangeFolder_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.SystemColors.Control;
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Location = new System.Drawing.Point(127, 192);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(60, 25);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "&Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 450);
+            this.ClientSize = new System.Drawing.Size(283, 461);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnChangeFolder);
             this.Controls.Add(this.chkOnTop);
             this.Controls.Add(this.lstFiles);
@@ -95,6 +109,7 @@
         private System.Windows.Forms.ListBox lstFiles;
         private System.Windows.Forms.CheckBox chkOnTop;
         private System.Windows.Forms.Button btnChangeFolder;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }
 

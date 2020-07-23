@@ -58,11 +58,12 @@ namespace Shortcutter
             }
             int maxHeight = Screen.FromControl(this).WorkingArea.Height - 100;
             lstFiles.Size = lstFiles.PreferredSize;
-            if (lstFiles.PreferredSize.Width < 200) { lstFiles.Width = 200; }
+            if (lstFiles.PreferredSize.Width < 160) { lstFiles.Width = 200; }
             if (lstFiles.PreferredHeight > maxHeight) { lstFiles.Height = maxHeight; }
 
             chkOnTop.Top = lstFiles.Height + 5;
             btnChangeFolder.Top = lstFiles.Height + 1;
+            btnRefresh.Top = lstFiles.Height + 1;
 
             this.Size = new Size(this.PreferredSize.Width - 4, this.PreferredSize.Height);
         }
@@ -94,6 +95,11 @@ namespace Shortcutter
             GetFiles();
             this.Visible = true;
             this.Activate();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            GetFiles();
         }
     }
 }
