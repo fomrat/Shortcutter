@@ -1,2 +1,2 @@
 # Shortcutter
-Floating window with clickable "shorcuts" from entries in a folder.
+Floating window with clickable "shortcuts" from entries in a folder.
