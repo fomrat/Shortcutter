@@ -62,7 +62,7 @@ namespace Shortcutter
                 lstFiles.Items.Add(fileName);
             }
             int maxHeight = Screen.FromControl(this).WorkingArea.Height - 100;
-            lstFiles.Size = lstFiles.PreferredSize;
+            lstFiles.Size = new Size(lstFiles.PreferredSize.Width-20, lstFiles.PreferredSize.Height); ;
             if (lstFiles.PreferredSize.Width < 160) { lstFiles.Width = 160; }
             if (lstFiles.PreferredHeight > maxHeight) { lstFiles.Height = maxHeight; }
 
