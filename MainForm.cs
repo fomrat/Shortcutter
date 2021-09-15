@@ -15,14 +15,19 @@ namespace Shortcutter
         private void MainForm_Load(object sender, EventArgs e)
         {
             this.Visible = false;
-            // have to prefix Properties with the Namepace if we want to examine them at design-time (!?)           
-            this.Location = new Point(Shortcutter.Properties.Settings.Default.LocationX, Shortcutter.Properties.Settings.Default.LocationY);
+
+            // have to prefix Properties with the Namepace if we want to examine them at design-time (!?)
+            if ((Shortcutter.Properties.Settings.Default.LocationX < 0) || (Shortcutter.Properties.Settings.Default.LocationY < 0))
+            { this.Location = new Point(0, 0); }
+            else
+            { this.Location = new Point(Shortcutter.Properties.Settings.Default.LocationX, Shortcutter.Properties.Settings.Default.LocationY); }
+
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             chkOnTop.Checked = Shortcutter.Properties.Settings.Default.FloatOnTop;
             this.TopMost = chkOnTop.Checked;
+
             Debug.WriteLine(this.Opacity.ToString());
             this.Opacity = Shortcutter.Properties.Settings.Default.OpacityPercent;
-
             if (this.Opacity < 0.10) { this.Opacity = 0.10; }
 
             GetFiles();
@@ -57,19 +62,19 @@ namespace Shortcutter
 
             foreach (string file in files)
             {
-                string fileName = Path.GetFileName(file);
+                string fileName = Path.GetFileNameWithoutExtension(file);
                 lstFiles.Items.Add(fileName);
             }
             int maxHeight = Screen.FromControl(this).WorkingArea.Height - 100;
-            lstFiles.Size = lstFiles.PreferredSize;
-            if (lstFiles.PreferredSize.Width < 160) { lstFiles.Width = 200; }
+            lstFiles.Size = new Size(lstFiles.PreferredSize.Width-20, lstFiles.PreferredSize.Height); ;
+            if (lstFiles.PreferredSize.Width < 160) { lstFiles.Width = 160; }
             if (lstFiles.PreferredHeight > maxHeight) { lstFiles.Height = maxHeight; }
 
             chkOnTop.Top = lstFiles.Height + 5;
             btnChangeFolder.Top = lstFiles.Height + 1;
             btnRefresh.Top = lstFiles.Height + 1;
 
-            this.Size = new Size(this.PreferredSize.Width - 4, this.PreferredSize.Height);
+            this.Size = new Size(this.PreferredSize.Width, this.PreferredSize.Height);
         }
         private string GetShortcutFolder()
         {

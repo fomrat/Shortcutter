@@ -52,9 +52,9 @@
             this.chkOnTop.AutoSize = true;
             this.chkOnTop.Location = new System.Drawing.Point(2, 196);
             this.chkOnTop.Name = "chkOnTop";
-            this.chkOnTop.Size = new System.Drawing.Size(80, 17);
+            this.chkOnTop.Size = new System.Drawing.Size(58, 17);
             this.chkOnTop.TabIndex = 1;
-            this.chkOnTop.Text = "&Stay on top";
+            this.chkOnTop.Text = "&On top";
             this.chkOnTop.UseVisualStyleBackColor = true;
             this.chkOnTop.CheckedChanged += new System.EventHandler(this.chkOnTop_CheckedChanged);
             // 
@@ -63,11 +63,12 @@
             this.btnChangeFolder.BackColor = System.Drawing.SystemColors.Control;
             this.btnChangeFolder.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnChangeFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeFolder.Location = new System.Drawing.Point(75, 192);
+            this.btnChangeFolder.Location = new System.Drawing.Point(60, 191);
             this.btnChangeFolder.Name = "btnChangeFolder";
-            this.btnChangeFolder.Size = new System.Drawing.Size(60, 25);
+            this.btnChangeFolder.Size = new System.Drawing.Size(56, 25);
             this.btnChangeFolder.TabIndex = 2;
-            this.btnChangeFolder.Text = "&Change Folder";
+            this.btnChangeFolder.Text = "&Change";
+            this.btnChangeFolder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChangeFolder.UseVisualStyleBackColor = false;
             this.btnChangeFolder.Click += new System.EventHandler(this.btnChangeFolder_Click);
             // 
@@ -76,7 +77,7 @@
             this.btnRefresh.BackColor = System.Drawing.SystemColors.Control;
             this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Location = new System.Drawing.Point(127, 192);
+            this.btnRefresh.Location = new System.Drawing.Point(110, 191);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(60, 25);
             this.btnRefresh.TabIndex = 3;
@@ -88,6 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(283, 461);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnChangeFolder);
