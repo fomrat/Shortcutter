@@ -49,7 +49,11 @@ namespace Shortcutter
             if (!Directory.Exists(Shortcutter.Properties.Settings.Default.ShortcutFolder))
             {
                 MessageBox.Show($"ShortcutFolder set to \"{ (object)Shortcutter.Properties.Settings.Default.ShortcutFolder}\". Select the  folder that contains your shortcuts.", "Settings must be set", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Shortcutter.Properties.Settings.Default.ShortcutFolder = GetShortcutFolder();
+
+                string folder = GetShortcutFolder();
+                if (String.IsNullOrEmpty(folder)) { folder = "."; }
+
+                Shortcutter.Properties.Settings.Default.ShortcutFolder = folder;
             }
 
             string[] files = Directory.GetFiles(Shortcutter.Properties.Settings.Default.ShortcutFolder, "*." + Shortcutter.Properties.Settings.Default.FileExt);
