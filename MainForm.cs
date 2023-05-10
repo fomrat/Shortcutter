@@ -66,7 +66,7 @@ namespace Shortcutter
                 lstFiles.Items.Add(fileName);
             }
             int maxHeight = Screen.FromControl(this).WorkingArea.Height - 100;
-            lstFiles.Size = new Size(lstFiles.PreferredSize.Width-20, lstFiles.PreferredSize.Height); ;
+            lstFiles.Size = new Size(lstFiles.PreferredSize.Width-20, lstFiles.PreferredSize.Height);
             if (lstFiles.PreferredSize.Width < 160) { lstFiles.Width = 160; }
             if (lstFiles.PreferredHeight > maxHeight) { lstFiles.Height = maxHeight; }
 
@@ -78,11 +78,13 @@ namespace Shortcutter
         }
         private string GetShortcutFolder()
         {
-            OpenFileDialog folderBrowser = new OpenFileDialog();
-            folderBrowser.ValidateNames = false;
-            folderBrowser.CheckFileExists = false;
-            folderBrowser.CheckPathExists = true;
-            folderBrowser.FileName = "Folder selected";
+            OpenFileDialog folderBrowser = new OpenFileDialog
+            {
+                ValidateNames = false,
+                CheckFileExists = false,
+                CheckPathExists = true,
+                FileName = "Folder selected"
+            };
 
             if (folderBrowser.ShowDialog() == DialogResult.OK) { return System.IO.Path.GetDirectoryName(folderBrowser.FileName); }
             else { return ""; }
