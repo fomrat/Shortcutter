@@ -51,7 +51,11 @@ namespace Shortcutter
                 MessageBox.Show($"ShortcutFolder set to \"{ (object)Shortcutter.Properties.Settings.Default.ShortcutFolder}\". Select the  folder that contains your shortcuts.", "Settings must be set", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 string folder = GetShortcutFolder();
-                if (String.IsNullOrEmpty(folder)) { folder = "."; }
+                if (String.IsNullOrEmpty(folder)) 
+                { 
+                    folder = "."; 
+  
+                }
 
                 Shortcutter.Properties.Settings.Default.ShortcutFolder = folder;
             }
@@ -76,7 +80,7 @@ namespace Shortcutter
 
             this.Size = new Size(this.PreferredSize.Width, this.PreferredSize.Height);
         }
-        private string GetShortcutFolder()
+          private string GetShortcutFolder()
         {
             OpenFileDialog folderBrowser = new OpenFileDialog
             {
