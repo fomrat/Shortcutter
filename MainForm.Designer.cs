@@ -37,13 +37,13 @@
             // 
             // lstFiles
             // 
-            this.lstFiles.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstFiles.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstFiles.FormattingEnabled = true;
-            this.lstFiles.ItemHeight = 22;
+            this.lstFiles.ItemHeight = 18;
             this.lstFiles.Location = new System.Drawing.Point(0, 0);
-            this.lstFiles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.lstFiles.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstFiles.Name = "lstFiles";
-            this.lstFiles.Size = new System.Drawing.Size(298, 268);
+            this.lstFiles.Size = new System.Drawing.Size(265, 202);
             this.lstFiles.TabIndex = 0;
             this.lstFiles.Click += new System.EventHandler(this.lstFiles_Click);
             this.lstFiles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lstFiles_KeyPress);
@@ -51,10 +51,10 @@
             // chkOnTop
             // 
             this.chkOnTop.AutoSize = true;
-            this.chkOnTop.Location = new System.Drawing.Point(3, 302);
-            this.chkOnTop.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chkOnTop.Location = new System.Drawing.Point(3, 241);
+            this.chkOnTop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkOnTop.Name = "chkOnTop";
-            this.chkOnTop.Size = new System.Drawing.Size(83, 24);
+            this.chkOnTop.Size = new System.Drawing.Size(65, 20);
             this.chkOnTop.TabIndex = 1;
             this.chkOnTop.Text = "&On top";
             this.chkOnTop.UseVisualStyleBackColor = true;
@@ -65,10 +65,10 @@
             this.btnChangeFolder.BackColor = System.Drawing.SystemColors.Control;
             this.btnChangeFolder.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnChangeFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeFolder.Location = new System.Drawing.Point(90, 294);
-            this.btnChangeFolder.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnChangeFolder.Location = new System.Drawing.Point(80, 235);
+            this.btnChangeFolder.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnChangeFolder.Name = "btnChangeFolder";
-            this.btnChangeFolder.Size = new System.Drawing.Size(84, 38);
+            this.btnChangeFolder.Size = new System.Drawing.Size(75, 31);
             this.btnChangeFolder.TabIndex = 2;
             this.btnChangeFolder.Text = "&Change";
             this.btnChangeFolder.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -80,10 +80,10 @@
             this.btnRefresh.BackColor = System.Drawing.SystemColors.Control;
             this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Location = new System.Drawing.Point(165, 294);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnRefresh.Location = new System.Drawing.Point(147, 235);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(90, 38);
+            this.btnRefresh.Size = new System.Drawing.Size(80, 31);
             this.btnRefresh.TabIndex = 3;
             this.btnRefresh.Text = "&Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
@@ -91,16 +91,17 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(424, 709);
+            this.ClientSize = new System.Drawing.Size(377, 567);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnChangeFolder);
             this.Controls.Add(this.chkOnTop);
             this.Controls.Add(this.lstFiles);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Shortcutter";
