@@ -37,13 +37,13 @@
             // 
             // lstFiles
             // 
-            this.lstFiles.Font = new System.Drawing.Font("Arial Narrow", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstFiles.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstFiles.FormattingEnabled = true;
-            this.lstFiles.ItemHeight = 22;
+            this.lstFiles.ItemHeight = 23;
             this.lstFiles.Location = new System.Drawing.Point(0, 0);
             this.lstFiles.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.lstFiles.Name = "lstFiles";
-            this.lstFiles.Size = new System.Drawing.Size(298, 268);
+            this.lstFiles.Size = new System.Drawing.Size(298, 257);
             this.lstFiles.TabIndex = 0;
             this.lstFiles.Click += new System.EventHandler(this.lstFiles_Click);
             this.lstFiles.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.lstFiles_KeyPress);
